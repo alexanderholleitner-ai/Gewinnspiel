@@ -37,6 +37,13 @@ public class GewinnController implements ActionListener {
             model.berechneRunde(zahl);
             view.zeigeRunde(model.getComputerZahl(), model.getRundenErgebnis(), model.getGesamtPunkte(),
                     model.hatGewonnen(), model.hatVerloren());
+        } else if (e.getActionCommand().equals("nochmal")) {
+            // nach Spielende beginnt ein neues Spiel
+            if (model.hatGewonnen() || model.hatVerloren()) {
+                model = new GewinnModel();
+                view.setGesamt("Gesamtpunkte: " + model.getGesamtPunkte());
+            }
+            view.loeschen();
         }
     }
 

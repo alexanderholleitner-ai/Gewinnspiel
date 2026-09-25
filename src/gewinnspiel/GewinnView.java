@@ -103,4 +103,15 @@ public class GewinnView extends JFrame {
         lRunde.setText(text);
         tfSpieler.setText("");
     }
+
+    public void loeschen() {
+        tfSpieler.setText("");
+        tfComputer.setText("");
+        lRunde.setText("Tippe eine Zahl von 1 bis 9");
+        tfSpieler.requestFocus();
+    }
+
+    public void setGesamt(String text) {
+        lGesamt.setText(text);
+    }
 }
