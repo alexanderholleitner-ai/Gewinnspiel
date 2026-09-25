@@ -80,4 +80,22 @@ public class GewinnView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
+
+    public String getEingabe() {
+        return tfSpieler.getText();
+    }
+
+    public void zeigeRunde(int computer, int ergebnis, int gesamt, boolean gewonnen, boolean verloren) {
+        tfComputer.setText("" + computer);
+        if (gewonnen) {
+            lRunde.setText("Gewonnen");
+        } else if (verloren) {
+            lRunde.setText("Verloren");
+        } else if (ergebnis > 0) {
+            lRunde.setText("+" + ergebnis);
+        } else {
+            lRunde.setText("" + ergebnis);
+        }
+        lGesamt.setText("" + gesamt);
+    }
 }

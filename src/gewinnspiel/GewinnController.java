@@ -18,7 +18,11 @@ public class GewinnController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        int zahl = Integer.parseInt(view.getEingabe());
+        model.berechneComputerZahl();
+        model.berechneRunde(zahl);
+        view.zeigeRunde(model.getComputerZahl(), model.getRundenErgebnis(), model.getGesamtPunkte(),
+                model.hatGewonnen(), model.hatVerloren());
     }
 
     public static void main(String[] args) {
