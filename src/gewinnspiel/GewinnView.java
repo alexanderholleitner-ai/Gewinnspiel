@@ -97,6 +97,11 @@ public class GewinnView extends JFrame {
             lRunde.setText("" + ergebnis);
         }
         lGesamt.setText("" + gesamt);
+
+        // v1.1: Eingabe sperren
+        tfSpieler.setEnabled(false);
+        bNochmal.setEnabled(true);
+        bNochmal.requestFocus();
     }
 
     public void zeigeFehler(String text) {
