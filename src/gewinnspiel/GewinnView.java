@@ -15,7 +15,7 @@ public class GewinnView extends JFrame {
     private JButton bNochmal;
 
     public GewinnView(GewinnController c) {
-        super("Zahlen-Gewinnspiel (v1.1)");
+        super("Zahlen-Gewinnspiel (v2.0)");
 
         Font normal = new Font("Arial", Font.PLAIN, 16);
         Font fett = new Font("Arial", Font.BOLD, 16);
@@ -103,6 +103,20 @@ public class GewinnView extends JFrame {
         tfSpieler.setEnabled(false);
         bNochmal.setEnabled(true);
         bNochmal.requestFocus();
+
+        // v2.0: Labels färben
+        if (ergebnis > 0) {
+            lRunde.setBackground(Color.GREEN);
+        } else {
+            lRunde.setBackground(Color.RED);
+        }
+        if (gewonnen) {
+            lGesamt.setBackground(Color.GREEN);
+        } else if (verloren) {
+            lGesamt.setBackground(Color.RED);
+        } else {
+            lGesamt.setBackground(Color.WHITE);
+        }
     }
 
     public void zeigeFehler(String text) {
@@ -118,6 +132,10 @@ public class GewinnView extends JFrame {
         // v1.1: Eingabe wieder freigeben
         tfSpieler.setEnabled(true);
         bNochmal.setEnabled(false);
+
+        // v2.0: Farben zurücksetzen
+        lRunde.setBackground(Color.WHITE);
+        lGesamt.setBackground(Color.WHITE);
         tfSpieler.requestFocus();
     }
 
