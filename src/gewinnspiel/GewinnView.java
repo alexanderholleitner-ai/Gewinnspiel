@@ -56,6 +56,7 @@ public class GewinnView extends JFrame {
         bNochmal.setFont(normal);
         bNochmal.setActionCommand("nochmal");
         bNochmal.addActionListener(c);
+        bNochmal.setEnabled(false);
 
         JPanel oben = new JPanel(new GridLayout(3, 2, 4, 2));
         oben.add(l1);
@@ -113,6 +114,10 @@ public class GewinnView extends JFrame {
         tfSpieler.setText("");
         tfComputer.setText("");
         lRunde.setText("Tippe eine Zahl von 1 bis 9");
+
+        // v1.1: Eingabe wieder freigeben
+        tfSpieler.setEnabled(true);
+        bNochmal.setEnabled(false);
         tfSpieler.requestFocus();
     }
 
