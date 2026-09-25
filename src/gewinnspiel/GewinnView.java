@@ -122,6 +122,10 @@ public class GewinnView extends JFrame {
         tfSpieler.setText("");
         tfComputer.setText("");
         lRunde.setText("Tippe eine Zahl von 1 bis 9");
+
+        // v2.0: Farben zurücksetzen
+        lRunde.setBackground(Color.WHITE);
+        lGesamt.setBackground(Color.WHITE);
         tfSpieler.requestFocus();
     }
 
