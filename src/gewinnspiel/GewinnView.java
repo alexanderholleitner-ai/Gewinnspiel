@@ -98,4 +98,9 @@ public class GewinnView extends JFrame {
         }
         lGesamt.setText("" + gesamt);
     }
+
+    public void zeigeFehler(String text) {
+        lRunde.setText(text);
+        tfSpieler.setText("");
+    }
 }

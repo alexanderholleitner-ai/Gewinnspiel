@@ -18,11 +18,26 @@ public class GewinnController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        int zahl = Integer.parseInt(view.getEingabe());
-        model.berechneComputerZahl();
-        model.berechneRunde(zahl);
-        view.zeigeRunde(model.getComputerZahl(), model.getRundenErgebnis(), model.getGesamtPunkte(),
-                model.hatGewonnen(), model.hatVerloren());
+        if (e.getActionCommand().equals("eingabe")) {
+            if (model.hatGewonnen() || model.hatVerloren()) {
+                return;
+            }
+            int zahl;
+            try {
+                zahl = Integer.parseInt(view.getEingabe());
+            } catch (NumberFormatException ex) {
+                view.zeigeFehler("Ungültige Eingabe!");
+                return;
+            }
+            if (zahl < 1 || zahl > 9) {
+                view.zeigeFehler("Nur 1 bis 9 erlaubt!");
+                return;
+            }
+            model.berechneComputerZahl();
+            model.berechneRunde(zahl);
+            view.zeigeRunde(model.getComputerZahl(), model.getRundenErgebnis(), model.getGesamtPunkte(),
+                    model.hatGewonnen(), model.hatVerloren());
+        }
     }
 
     public static void main(String[] args) {
