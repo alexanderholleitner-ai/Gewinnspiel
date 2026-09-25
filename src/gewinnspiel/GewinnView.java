@@ -97,6 +97,20 @@ public class GewinnView extends JFrame {
             lRunde.setText("" + ergebnis);
         }
         lGesamt.setText("" + gesamt);
+
+        // v2.0: Labels färben
+        if (ergebnis > 0) {
+            lRunde.setBackground(Color.GREEN);
+        } else {
+            lRunde.setBackground(Color.RED);
+        }
+        if (gewonnen) {
+            lGesamt.setBackground(Color.GREEN);
+        } else if (verloren) {
+            lGesamt.setBackground(Color.RED);
+        } else {
+            lGesamt.setBackground(Color.WHITE);
+        }
     }
 
     public void zeigeFehler(String text) {
