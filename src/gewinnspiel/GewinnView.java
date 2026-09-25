@@ -15,7 +15,7 @@ public class GewinnView extends JFrame {
     private JButton bNochmal;
 
     public GewinnView(GewinnController c) {
-        super("Zahlen-Gewinnspiel (v1.0)");
+        super("Zahlen-Gewinnspiel (v1.1)");
 
         Font normal = new Font("Arial", Font.PLAIN, 16);
         Font fett = new Font("Arial", Font.BOLD, 16);
