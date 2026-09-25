@@ -1,0 +1,9 @@
+out/
+*.iml
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/tasks.xml
+.idea/shelf/
+.idea/dictionaries/
+.DS_Store
+Thumbs.db
